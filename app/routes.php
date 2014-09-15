@@ -28,6 +28,11 @@ Route::group(array('before' => 'auth'), function(){
 	Route::get('/user/logout', array('uses' => 'UserController@getLogout', 'as' => 'getLogout'));
 });
 
+Route::get('/user/student', array('uses' => 'UserController@getStudentIndex', 'as' => 'getStud'));
+
+Route::get('/user/teacher_in', array('uses' => 'UserController@getTeacherinIndex', 'as' => 'getTeachin'));
+
+
 HTML::macro('clever_link', function($route, $text) {
 	if( Request::path() == $route ) {
 		$active = "class = 'active'";

@@ -111,12 +111,12 @@
           {{ HTML::clever_link("help", 'رهنما' ) }}
           {{ HTML::clever_link("contact", 'تماس با ما' ) }}
           @else
-          {{ HTML::clever_link("/student", 'فورمه مصاحبه با محصل' ) }}
-          {{ HTML::clever_link("/teacher_in", 'فورمه مصاحبه با استاد' ) }}
+          {{ HTML::clever_link("user/student", 'فورمه مصاحبه با محصل' ) }}
+          {{ HTML::clever_link("user/teacher_in", 'فورمه مصاحبه با استاد' ) }}
           {{ HTML::clever_link("/teacher_ob", 'فورم مشاهده استاد' ) }}
           {{ HTML::clever_link("/admin_in", '  فورمه مصاحبه با کارمندان اداری' ) }}
           @endif
-  
+
 
 </ul>
 <hr style="border-top: 2px solid #0986b7;"/>
