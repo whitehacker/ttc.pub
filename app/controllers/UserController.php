@@ -51,13 +51,17 @@ class UserController extends BaseController {
           'password' => Input::get('pass1')
         ), $remember);
         if($auth){
+          $user = Auth::user()->username; 
+          $name = User::find($user->id)->name();
           return Redirect::intended('/');
+
         }
         else{
           return Redirect::route('getLogin')->with('fail', 'اسم کاربر و یا شفر شما غلط میباشد لطفا معلومات درست خویش را وارد سازید!');
         }
       }
   }
+
 
   public function getLogout(){
     Auth::logout();

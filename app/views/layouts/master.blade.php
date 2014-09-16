@@ -115,6 +115,7 @@
           {{ HTML::clever_link("user/teacher_in", 'فورمه مصاحبه با استاد' ) }}
           {{ HTML::clever_link("/teacher_ob", 'فورم مشاهده استاد' ) }}
           {{ HTML::clever_link("/admin_in", '  فورمه مصاحبه با کارمندان اداری' ) }}
+
           @endif
 
 
@@ -126,6 +127,10 @@
             <div class="container" style="padding-right:0">
                 <div class="row">
                     <div class="col-md-12">
+                      @if ( !Auth::guest() )
+<h3>Welcome {{Auth::user()->name()}}</h3>
+
+@endif
                       @yield('content')
                     </div>
                 </div>
