@@ -24,6 +24,10 @@ Route::group(array('before' => 'csrf'), function() {
 	Route::post('/user/login', array('uses' => 'UserController@postLogin', 'as' => 'postLogin'));
 	});
 });
+
+Route::group(array('before' => 'csrf'), function() {
+	Route::post('/user/student', array('uses' => 'StudentController@postStudent', 'as' => 'postStudent'));
+});
 Route::group(array('before' => 'auth'), function(){
 	Route::get('/user/logout', array('uses' => 'UserController@getLogout', 'as' => 'getLogout'));
 });

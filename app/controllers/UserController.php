@@ -51,7 +51,7 @@ class UserController extends BaseController {
           'password' => Input::get('pass1')
         ), $remember);
         if($auth){
-          $user = Auth::user(); 
+          $user = Auth::user();
           $name = User::find($user->id)->name();
           return Redirect::intended('/');
 

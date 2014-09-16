@@ -128,7 +128,7 @@
                 <div class="row">
                     <div class="col-md-12">
                       @if ( !Auth::guest() )
-<h3>Welcome {{Auth::user()->name()}}</h3>
+<h3 class="alert alert-warning"> استاد محترم{{ Auth::user()->getUserId() }} خوش آمدید!</h3>
 
 @endif
                       @yield('content')
