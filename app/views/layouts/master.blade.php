@@ -6,9 +6,12 @@
   {{ HTML::style('css/bootstrap-arabic.css') }}
   {{ HTML::style('css/bootstrap-arabic-theme.css') }}
   {{ HTML::style('css/font-awesome.css') }}
+  {{ HTML::style('css/bootstrap-datepicker.css') }}
   {{ HTML::script('js/bootstrap-arabic.js') }}
   {{ HTML::script('js/jquery.js') }}
   {{ HTML::script('js/script.js') }}
+  {{ HTML::script('js/bootstrap-datepicker.min.js') }}
+  {{ HTML::script('js/bootstrap-datepicker.fa.js') }}
 
   @show
   <style>
