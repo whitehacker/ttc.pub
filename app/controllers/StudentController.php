@@ -8,9 +8,10 @@ class StudentController extends BaseController {
   }
   public function postStudent(){
     $validate = Validator::make(Input::all(), array(
-      'pro' => 'required',
-      'pass1' => 'required|min:6',
-      'pass2' => 'required|same:pass1'
+      'pro' => 'required|min:3',
+      'ttc_name' => 'required',
+      'teacher_name' => 'required',
+      'teacher_last_name' => 'required'
     ));
 
   }
