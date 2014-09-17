@@ -17,11 +17,6 @@
 <form>
   <div class="container">
     <div class="row">
-      @if(Session::has('success'))
-        <div class="alert alert-success">{{ Session::get('success') }}</div>
-      @elseif (Session::has('fail'))
-        <div class="alert alert-danger">{{ Session::get('fail') }}</div>
-      @endif
       <h4 class="text-muted">مشخصات دارالمعلمین</h4>
         <div class="col-md-3">
 
