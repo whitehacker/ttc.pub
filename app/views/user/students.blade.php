@@ -10,74 +10,56 @@
 @elseif (Session::has('fail'))
   <div class="alert alert-danger">{{ Session::get('fail') }}</div>
 @endif
-<h2>فورم مصاحبه با محصل</h2>
-@if ( !Auth::guest() )
-<h3 class="alert alert-warning"> استاد محترم{{ Auth::user()->getUserId() }} خوش آمدید!</h3>
+<h3>فورم مصاحبه با محصل</h3>
+<hr/>
+<!--<h3 class="alert alert-warning"> استاد محترم{{ Auth::user()->getUserId() }} خوش آمدید!</h3>-->
 
-@endif
-<form class="form-horizontal" action="{{ URL::route('postStudent')}}" method="post">
-<fieldset>
+<form>
+  <div class="container">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>اسم محصل</label>
+                <input type="text" class="form-control">
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="form-group">
+                <label>اسم دارالمعلمین</label>
+                <input type="text" class="form-control">
+            </div>
+        </div>
 
-<!-- Form Name -->
-<legend>Form Name</legend>
+      <div class="col-md-3">
+        <div class="form-group">
+            <label>ولایت</label>
+            <input type="text" class="form-control">
+        </div>
+      </div>
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="textinput">Text Input</label>
-  <div class="col-md-4">
-  <input id="textinput" name="q1" type="text" placeholder="placeholder" class="form-control input-md">
-  <span class="help-block">help</span>
-  </div>
+      <div class="col-md-3">
+        <div class="form-group">
+            <label>ولسوالی</label>
+            <input type="text" class="form-control">
+        </div>
+      </div>
+    </div>
 </div>
-
-<!-- Password input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="passwordinput">Password Input</label>
-  <div class="col-md-4">
-    <input id="passwordinput" name="q2" type="text" placeholder="placeholder" class="form-control input-md">
-    <span class="help-block">help</span>
-  </div>
-</div>
-
-<!-- Search input-->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="searchinput">Search Input</label>
-  <div class="col-md-4">
-    <input id="searchinput" name="searchinput" type="search" placeholder="placeholder" class="form-control input-md">
-    <p class="help-block">help</p>
-  </div>
-</div>
-
-<!-- Multiple Checkboxes -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="checkboxes">Multiple Checkboxes</label>
-  <div class="col-md-4">
-  <div class="checkbox">
-    <label for="checkboxes-0">
-      <input type="checkbox" name="checkboxes" id="checkboxes-0" value="1">
-      Option one
-    </label>
-	</div>
-  <div class="checkbox">
-    <label for="checkboxes-1">
-      <input type="checkbox" name="checkboxes" id="checkboxes-1" value="2">
-      Option two
-    </label>
-	</div>
-  </div>
-</div>
-
-<!-- Button (Double) -->
-<div class="form-group">
-  <label class="col-md-4 control-label" for="button1id">Double Button</label>
-  <div class="col-md-8">
-    <button id="button1id" name="button1id" class="btn btn-success">Good Button</button>
-    <button id="button2id" name="button2id" class="btn btn-danger">Scary Button</button>
-  </div>
-</div>
-
-</fieldset>
 </form>
 
+<h1>Dropdown demo</h1>
+      	{{ Form::open() }}
+    		    <select id="make" name="make">
+    		    	<option>Select Car Make</option>
+    		        <option value="1">Kabul</option>
+    		        <option value="2">Ghazni</option>
+    		        <option value="3">Zabul</option>
+    		    </select>
+    		    <br>
+    		    <select id="model" name="model">
+    		    	<option>Please choose car make first</option>
+    		    </select>
+    		{{ Form::close();}}
+<br/><br/><br/>
 
 @stop

@@ -8,6 +8,7 @@
   {{ HTML::style('css/font-awesome.css') }}
   {{ HTML::script('js/bootstrap-arabic.js') }}
   {{ HTML::script('js/jquery.js') }}
+  {{ HTML::script('js/script.js') }}
 
   @show
   <style>
@@ -95,7 +96,10 @@
 
         <a href="{{ URL::route('getCreate') }}" class="btn btn-warning" style="margin-top:10px">ثبت نام</a>
         @else
+
         <a href="{{ URL::route('getLogout') }}" class="btn btn-danger" style="margin-top:10px">از سیستم خارج شوید!</a>
+
+
         @endif
 
       </ul>
@@ -121,16 +125,16 @@
 
 </ul>
 <hr style="border-top: 2px solid #0986b7;"/>
+@if(Auth::check())
+<div class="alert alert-success"> استاد محترم{{ Auth::user()->name() }} خوش آمدید!</div>
+@endif
     </div>
     <div id="page-content-wrapper">
         <div class="page-content">
             <div class="container" style="padding-right:0">
                 <div class="row">
                     <div class="col-md-12">
-                      @if ( !Auth::guest() )
-<h3 class="alert alert-warning"> استاد محترم{{ Auth::user()->getUserId() }} خوش آمدید!</h3>
 
-@endif
                       @yield('content')
                     </div>
                 </div>

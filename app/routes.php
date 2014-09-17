@@ -37,6 +37,8 @@ Route::get('/user/student', array('uses' => 'UserController@getStudentIndex', 'a
 Route::get('/user/teacher_in', array('uses' => 'UserController@getTeacherinIndex', 'as' => 'getTeachin'));
 
 
+
+
 HTML::macro('clever_link', function($route, $text) {
 	if( Request::path() == $route ) {
 		$active = "class = 'active'";
