@@ -26,6 +26,8 @@ Route::group(array('before' => 'csrf'), function() {
 });
 
 Route::get('/user/student', array('uses' => 'StudentController@getStudent', 'as' => 'getStudent'));
+
+
 Route::post('/user/student', array('uses' => 'StudentController@postStudent', 'as' => 'postStudent'));
 
 Route::group(array('before' => 'auth'), function(){
@@ -35,7 +37,7 @@ Route::group(array('before' => 'auth'), function(){
 
 Route::get('/user/teacher_in', array('uses' => 'UserController@getTeacherinIndex', 'as' => 'getTeachin'));
 
-
+Route::get('/user/teachersob', array('uses' => 'TeacherController@getTeacherhsob', 'as' => 'getTeacherhsob'));
 
 
 HTML::macro('clever_link', function($route, $text) {
