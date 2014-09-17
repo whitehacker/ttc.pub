@@ -120,7 +120,7 @@
           @else
           {{ HTML::clever_link("user/student", 'فورمه مصاحبه با محصل' ) }}
           {{ HTML::clever_link("user/teacher_in", 'فورمه مصاحبه با استاد' ) }}
-          {{ HTML::clever_link("/teacher_ob", 'فورم مشاهده استاد' ) }}
+          {{ HTML::clever_link("/user/teachersob", 'فورم مشاهده استاد' ) }}
           {{ HTML::clever_link("/admin_in", '  فورمه مصاحبه با کارمندان اداری' ) }}
 
           @endif
