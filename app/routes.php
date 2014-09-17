@@ -25,14 +25,13 @@ Route::group(array('before' => 'csrf'), function() {
 	});
 });
 
-Route::group(array('before' => 'csrf'), function() {
-	Route::post('/user/student', array('uses' => 'StudentController@postStudent', 'as' => 'postStudent'));
-});
+Route::get('/user/student', array('uses' => 'StudentController@getStudent', 'as' => 'getStudent'));
+Route::post('/user/student', array('uses' => 'StudentController@postStudent', 'as' => 'postStudent'));
+
 Route::group(array('before' => 'auth'), function(){
 	Route::get('/user/logout', array('uses' => 'UserController@getLogout', 'as' => 'getLogout'));
 });
 
-Route::get('/user/student', array('uses' => 'StudentController@getStudent', 'as' => 'getStudent'));
 
 Route::get('/user/teacher_in', array('uses' => 'UserController@getTeacherinIndex', 'as' => 'getTeachin'));
 

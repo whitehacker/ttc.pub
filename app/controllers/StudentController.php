@@ -14,7 +14,7 @@ class StudentController extends BaseController {
       'teacher_last_name' => 'required'
     ));
     if($validate ->fails()){
-      return Redirect::route('get Student')->withErrors($validate)->withInput();
+      return Redirect::route('getStudent')->withErrors($validate)->withInput();
     }
     else{
       $student = new Students();
