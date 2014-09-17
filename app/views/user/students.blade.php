@@ -17,49 +17,47 @@
 <form>
   <div class="container">
     <div class="row">
+      <h4 class="text-muted">مشخصات دارالمعلمین</h4>
         <div class="col-md-3">
+
             <div class="form-group">
-                <label>اسم محصل</label>
-                <input type="text" class="form-control">
+                <label>ولایت</label>
+                <input type="text" class="form-control" name="pro">
             </div>
         </div>
         <div class="col-md-3">
             <div class="form-group">
                 <label>اسم دارالمعلمین</label>
-                <input type="text" class="form-control">
+                <input type="text" class="form-control" name="ttc_name">
             </div>
         </div>
 
       <div class="col-md-3">
         <div class="form-group">
-            <label>ولایت</label>
-            <input type="text" class="form-control">
+            <label>اسم استاد</label>
+            <input type="text" class="form-control" name="teacher_name">
         </div>
       </div>
 
       <div class="col-md-3">
         <div class="form-group">
-            <label>ولسوالی</label>
-            <input type="text" class="form-control">
+            <label>تخلص استاد</label>
+            <input type="text" class="form-control" name="teacher_last_name">
         </div>
       </div>
+    </div>
+
+    <div class="row">
+      <div class="form-group">
+  <div class="col-md-8">
+    <input type="submit" class="btn btn-success" value="ذخیره نمایید!">
+
+  </div>
+</div>
     </div>
 </div>
 </form>
 
-<h1>Dropdown demo</h1>
-      	{{ Form::open() }}
-    		    <select id="make" name="make">
-    		    	<option>Select Car Make</option>
-    		        <option value="1">Kabul</option>
-    		        <option value="2">Ghazni</option>
-    		        <option value="3">Zabul</option>
-    		    </select>
-    		    <br>
-    		    <select id="model" name="model">
-    		    	<option>Please choose car make first</option>
-    		    </select>
-    		{{ Form::close();}}
 <br/><br/><br/>
 
 @stop

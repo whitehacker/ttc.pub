@@ -2,6 +2,10 @@
 
 class StudentController extends BaseController {
 
+  public function getStudent(){
+    return View::make('user.students');
+
+  }
   public function postStudent(){
 
     $validate = Validator::make(Input::all(), array(

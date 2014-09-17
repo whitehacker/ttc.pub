@@ -72,11 +72,6 @@ class UserController extends BaseController {
     return View::make('help');
   }
 
-  public function getStudentIndex(){
-    return View::make('user.students');
-
-  }
-
   public function getTeacherinIndex(){
     return View::make('user.teacherin');
 
