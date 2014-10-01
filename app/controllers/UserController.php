@@ -79,4 +79,14 @@ class UserController extends BaseController {
   public function getContact(){
     return View::make('contact');
   }
+
+    public function view_users(){
+      return View::make('user.report')
+        ->with('users', User::orderBy('id')->get());
+    }
+
+    public function get_view($id){
+      $user = User::where('id', $id)->firstOrFail();
+      return View::make('user.view')->with('user', $user);
+    }
 }

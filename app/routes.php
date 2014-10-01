@@ -40,6 +40,11 @@ Route::get('/user/teacher_in', array('uses' => 'UserController@getTeacherinIndex
 Route::get('/user/teachersob', array('uses' => 'TeacherController@getTeacherhsob', 'as' => 'getTeacherhsob'));
 
 
+Route::get('/user/reports', array('uses' => 'UserController@view_users', 'as' => 'view_users'));
+
+Route::get('/user/{id}', array('uses' => 'UserController@get_view', 'as' => 'get_view'));
+
+
 HTML::macro('clever_link', function($route, $text) {
 	if( Request::path() == $route ) {
 		$active = "class = 'active'";

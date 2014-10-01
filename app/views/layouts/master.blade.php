@@ -123,14 +123,24 @@
           {{ HTML::clever_link("/user/teachersob", 'فورم مشاهده استاد' ) }}
           {{ HTML::clever_link("/admin_in", '  فورمه مصاحبه با کارمندان اداری' ) }}
 
-          @endif
 
 
+
+
+<hr style="border-top: 1px solid #0986b7;"/>
+@if(Auth::check())
+  @if(Auth::user()->isAdmin() == 1)
+{{ HTML::clever_link("/user/reports", ' راپور ها' ) }}
+  @endif
+@endif
+@endif
 </ul>
-<hr style="border-top: 2px solid #0986b7;"/>
+<!--
 @if(Auth::check())
 <div class="alert alert-success"> استاد محترم{{ Auth::user()->name() }} خوش آمدید!</div>
 @endif
+-->
+
     </div>
     <div id="page-content-wrapper">
         <div class="page-content">

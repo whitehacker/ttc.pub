@@ -3712,7 +3712,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   float: right;
   }
 .nav-pills > li > a {
-  border-radius: 4px;
+  /*border-radius: 4px;*/
   }
 .nav-pills > li + li {
   margin-right: 2px;
