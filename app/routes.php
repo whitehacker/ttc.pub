@@ -39,6 +39,7 @@ Route::get('/user/teacher_in', array('uses' => 'UserController@getTeacherinIndex
 
 Route::get('/user/teachersob', array('uses' => 'TeacherController@getTeacherhsob', 'as' => 'getTeacherhsob'));
 
+Route::get('/user/adminint', array('uses' => 'AdminController@getAdminInt', 'as' => 'getAdminInt'));
 
 Route::get('/user/reports', array('uses' => 'UserController@view_users', 'as' => 'view_users'));
 

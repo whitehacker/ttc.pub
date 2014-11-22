@@ -98,7 +98,7 @@
     {{ HTML::clever_link("user/student", 'مصاحبه محصل' ) }}
     {{ HTML::clever_link("user/teacher_in", 'مصاحبه استاد' ) }}
     {{ HTML::clever_link("user/teachersob", 'مشاهده استاد' ) }}
-    {{ HTML::clever_link("user/admin_in", 'مصاحبه با کارمندان اداری' ) }}
+    {{ HTML::clever_link("user/adminint", 'مصاحبه با کارمندان اداری' ) }}
 
 @if(Auth::check())
 @if(Auth::user()->isAdmin() == 1)
