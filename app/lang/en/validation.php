@@ -99,7 +99,9 @@ return array(
 		),
 		'pro' => array(
 			'required' => 'نوشتن اسم ولایت حتمی است',
-			
+		),
+		'ttc_name' => array(
+			'required' => 'نوشتن اسم دارالمعلمین حتمی است',
 		),
 
 
