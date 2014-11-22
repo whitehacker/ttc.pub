@@ -24,17 +24,21 @@
                 <label>ولایت</label>
                 <input type="text" class="form-control" name="pro">
             </div>
+            <span class="text-danger">
             @if($errors->has('pro'))
               {{ $errors->first('pro') }}
             @endif
+          </span>
         </div>
         <div class="col-md-3">
             <div class="form-group">
                 <label>اسم دارالمعلمین</label>
                 <input type="text" class="form-control" name="ttc_name">
+                <span class="text-danger">
                 @if($errors->has('ttc_name'))
                   {{ $errors->first('ttc_name') }}
                 @endif
+              </span>
             </div>
         </div>
 
