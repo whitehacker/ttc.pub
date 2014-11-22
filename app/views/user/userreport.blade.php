@@ -1,17 +1,20 @@
 @extends('layouts.master')
-
 @section('head')
   @parent
-  <title>HOME ::  View User Forms</title>
+  <title>HOME ::  Users Reports</title>
 @endsection
 
 @section('content')
-<h3>
-  راپور های ثبت شده استاد
-  {{ $user->full_name }}
-</h3>
-<hr/>
 
+
+
+
+<h4 class="text-info">
+  راپور های ثبت شده شما!
+  {{ $user->full_name }}
+</h4>
+<hr/>
+<a href="{{ URL::route('user_report', array($user->id)) }}">{{ $user->full_name }}</a>
 <table class="table table-bordered">
   <tr class="success">
     <th>شماره</th>
@@ -57,5 +60,5 @@
   <th colspan=4>{{ $i-1 }}</th>
 </tr>
 </table>
-
-@stop
+<br/><br/>
+@endsection

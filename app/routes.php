@@ -44,6 +44,7 @@ Route::get('/user/reports', array('uses' => 'UserController@view_users', 'as' =>
 
 Route::get('/user/{id}', array('uses' => 'UserController@get_view', 'as' => 'get_view'));
 
+Route::get('/userreport/{id}', array('uses' => 'HomeController@user_report', 'as' => 'user_report'));
 
 HTML::macro('clever_link', function($route, $text) {
 	if( Request::path() == $route ) {

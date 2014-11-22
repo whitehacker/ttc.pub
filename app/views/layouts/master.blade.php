@@ -15,6 +15,7 @@
 
   @show
   <style>
+  .fa-fw {width: 2em;}
   #wrapper {
   padding-right: 250px;
   transition: all 0.4s ease 0s;
@@ -70,7 +71,8 @@
   </style>
 </head>
 <body>
-<nav class="navbar navbar-inverse" style="margin-bottom:0px" role="navigation">
+
+<nav class="navbar navbar-inverse navbar-fixed-top" style="margin-bottom:0px" role="navigation">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -87,9 +89,23 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
 
+
+    @if(!Auth::check())
     {{ HTML::clever_link("/", 'صفحه اصلی' ) }}
     {{ HTML::clever_link("help", 'رهنما' ) }}
     {{ HTML::clever_link("contact", 'تماس با ما' ) }}
+    @else
+    {{ HTML::clever_link("user/student", 'مصاحبه محصل' ) }}
+    {{ HTML::clever_link("user/teacher_in", 'مصاحبه استاد' ) }}
+    {{ HTML::clever_link("user/teachersob", 'مشاهده استاد' ) }}
+    {{ HTML::clever_link("user/admin_in", 'مصاحبه با کارمندان اداری' ) }}
+
+@if(Auth::check())
+@if(Auth::user()->isAdmin() == 1)
+{{ HTML::clever_link("/user/reports", ' راپور ها' ) }}
+@endif
+@endif
+@endif
 
       </ul>
 
@@ -110,51 +126,51 @@
   </div><!-- /.container-fluid -->
 </nav>
 
-<div id="wrapper">
-    <div id="sidebar-wrapper">
-        <ul class="nav nav-pills nav-stacked">
-          @if(!Auth::check())
-          {{ HTML::clever_link("/", 'صفحه اصلی' ) }}
-          {{ HTML::clever_link("help", 'رهنما' ) }}
-          {{ HTML::clever_link("contact", 'تماس با ما' ) }}
-          @else
-          {{ HTML::clever_link("user/student", 'فورمه مصاحبه با محصل' ) }}
-          {{ HTML::clever_link("user/teacher_in", 'فورمه مصاحبه با استاد' ) }}
-          {{ HTML::clever_link("/user/teachersob", 'فورم مشاهده استاد' ) }}
-          {{ HTML::clever_link("/admin_in", '  فورمه مصاحبه با کارمندان اداری' ) }}
 
 
 
-
-
-<hr style="border-top: 1px solid #0986b7;"/>
-@if(Auth::check())
-  @if(Auth::user()->isAdmin() == 1)
-{{ HTML::clever_link("/user/reports", ' راپور ها' ) }}
-  @endif
-@endif
-@endif
-</ul>
 <!--
 @if(Auth::check())
 <div class="alert alert-success"> استاد محترم{{ Auth::user()->name() }} خوش آمدید!</div>
 @endif
 -->
 
-    </div>
-    <div id="page-content-wrapper">
-        <div class="page-content">
-            <div class="container" style="padding-right:0">
-                <div class="row">
-                    <div class="col-md-12">
 
-                      @yield('content')
-                    </div>
+
+
+  <div class="container" style="margin-top:50px">
+
+
+                <div class="row">
+
+
+
+      <div class="col-md-12">
+
+        @yield('content')
+
+      </div>
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
+
+                        @if(Auth::check())
+                        @if(Auth::user()->isAdmin() != 1)
+                        <?php $id=Auth::user()->getUserId(); ?>
+                        <div class="row">
+                          <div class="col-md-3 pull-right">
+                            <a href="{{ URL::route('user_report', array($id)) }}" class="navbar-btn btn btn-primary btn-lg btn-block">
+                              <i class="fa fa-bar-chart"></i>
+                            راپورها
+
+                            </a>
+                          </div>
+                        </div>
+
+                        @endif
+                        @endif
+              </div>
+
+
+
 
 
 
@@ -167,9 +183,11 @@
 
      <a href="/contact" class="navbar-btn btn-danger btn pull-right">
      <span class="fa fa-envelope"></span>  تماس با ما</a>
+
    </div>
 
 
  </div>
+
 </body>
 </html>

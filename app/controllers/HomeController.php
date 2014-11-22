@@ -19,5 +19,9 @@ class HomeController extends BaseController {
 	{
 		return View::make('hello');
 	}
+	public function user_report($id){
+		$user = User::where('id', $id)->firstOrFail();
+		return View::make('user.userreport')->with('user', $user);;
+	}
 
 }
