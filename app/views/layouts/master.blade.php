@@ -1,10 +1,11 @@
 <!doctype html>
 <html lang="en">
 <head>
+  
   @section('head')
   <meta charset="UTF-8">
   {{ HTML::style('css/bootstrap-arabic.css') }}
-  {{ HTML::style('css/bootstrap-arabic-theme.css') }}
+  <!-- {{ HTML::style('css/bootstrap-arabic-theme.css') }} -->
   {{ HTML::style('css/font-awesome.css') }}
   {{ HTML::style('css/bootstrap-datepicker.css') }}
   {{ HTML::script('js/bootstrap-arabic.js') }}
@@ -113,7 +114,7 @@
         @if(!Auth::check())
         <a href="{{ URL::route('getLogin') }}" class="btn btn-success" style="margin-top:10px">داخل سیستم شوید!</a>
 
-        <a href="{{ URL::route('getCreate') }}" class="btn btn-warning" style="margin-top:10px">ثبت نام</a>
+        <a href="{{ URL::route('getCreate') }}" class="btn btn-primary" style="margin-top:10px">ثبت نام</a>
         @else
 
         <a href="{{ URL::route('getLogout') }}" class="btn btn-danger" style="margin-top:10px">از سیستم خارج شوید!</a>

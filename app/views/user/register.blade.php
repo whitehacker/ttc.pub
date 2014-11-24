@@ -78,7 +78,7 @@ legend{
         <div class="col-md-6 col-md-offset-3">
             <form action="{{ URL::route('postCreate') }}" method="post" accept-charset="utf-8" class="form" role="form">
               <br/><br/>
-              <legend>ثبت نام اعضای علمي <a href="/user/login" class="pull-right btn btn-primary">داخل سیستم شوید!</a></legend>
+              <legend>ثبت نام اعضای علمي <a href="/user/login" class="pull-right btn btn-success">داخل سیستم شوید!</a></legend>
 <br/><br/>
                     <h4>لطفا معلومات ذیل را وارد نمایید!</h4>
 
