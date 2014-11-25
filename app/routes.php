@@ -37,6 +37,8 @@ Route::group(array('before' => 'auth'), function(){
 
 Route::get('/user/teacher_in', array('uses' => 'UserController@getTeacherinIndex', 'as' => 'getTeachin'));
 
+Route::post('/user/teacher_in', array('uses' => 'TeacherController@postTeacherin', 'as' => 'postTeacherin'));
+
 Route::get('/user/teachersob', array('uses' => 'TeacherController@getTeacherhsob', 'as' => 'getTeacherhsob'));
 
 Route::get('/user/adminint', array('uses' => 'AdminController@getAdminInt', 'as' => 'getAdminInt'));

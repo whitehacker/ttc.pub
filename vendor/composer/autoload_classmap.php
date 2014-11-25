@@ -6,6 +6,7 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'AdminController' => $baseDir . '/app/controllers/AdminController.php',
     'BaseController' => $baseDir . '/app/controllers/BaseController.php',
     'Boris\\Boris' => $vendorDir . '/d11wtq/boris/lib/Boris/Boris.php',
     'Boris\\CLIOptionsHandler' => $vendorDir . '/d11wtq/boris/lib/Boris/CLIOptionsHandler.php',
@@ -34,6 +35,7 @@ return array(
     'CreateForumThreadsTable' => $baseDir . '/app/database/migrations/2014_09_10_115228_create_forum_threads_table.php',
     'CreateProvinceTable' => $baseDir . '/app/database/migrations/2014_09_16_170429_create_province_table.php',
     'CreateStudentsTable' => $baseDir . '/app/database/migrations/2014_09_17_062616_create_students_table.php',
+    'CreateTeacherinsTable' => $baseDir . '/app/database/migrations/2014_11_25_075555_create_teacherins_table.php',
     'CreateTtcTable' => $baseDir . '/app/database/migrations/2014_09_16_170836_create_ttc_table.php',
     'CreateUsersTable' => $baseDir . '/app/database/migrations/2014_09_10_115049_create_users_table.php',
     'Crypt_AES' => $vendorDir . '/phpseclib/phpseclib/phpseclib/Crypt/AES.php',
@@ -1570,6 +1572,8 @@ return array(
     'Symfony\\Component\\Translation\\Writer\\TranslationWriter' => $vendorDir . '/symfony/translation/Symfony/Component/Translation/Writer/TranslationWriter.php',
     'System_SSH_Agent' => $vendorDir . '/phpseclib/phpseclib/phpseclib/System/SSH/Agent.php',
     'System_SSH_Agent_Identity' => $vendorDir . '/phpseclib/phpseclib/phpseclib/System/SSH/Agent.php',
+    'TeacherController' => $baseDir . '/app/controllers/TeacherController.php',
+    'Teacherins' => $baseDir . '/app/models/Teacherins.php',
     'TestCase' => $baseDir . '/app/tests/TestCase.php',
     'User' => $baseDir . '/app/models/User.php',
     'UserController' => $baseDir . '/app/controllers/UserController.php',

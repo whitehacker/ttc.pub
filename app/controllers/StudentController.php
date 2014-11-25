@@ -154,7 +154,6 @@ class StudentController extends BaseController {
       // $student->Q54 = Input::get('q54');
 
       $student->User_id = Auth::user()->getUserId();
-
       if($student->save()){
         return Redirect::route('getStudent')->with('success','فورم شما موفقانه ثبت ګردید!!');
       }
